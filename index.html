@@ -3,37 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filter Produk</title>
+    <title>Kalkulator Diskon</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>🛍️ Toko Online - Filter Produk</h1>
+      <h1>💰 Kalkulator Diskon</h1>
 
-      <!-- Filter Section -->
-      <div class="filter-section">
-        <h2>Pilih Kategori</h2>
-        <div class="filter-buttons">
-          <button class="filter-btn active" onclick="filterProduk('semua')">
-            Semua
-          </button>
-          <button class="filter-btn" onclick="filterProduk('elektronik')">
-            Elektronik
-          </button>
-          <button class="filter-btn" onclick="filterProduk('fashion')">
-            Fashion
-          </button>
-          <button class="filter-btn" onclick="filterProduk('food')">
-            Makanan
-          </button>
+      <div class="card">
+        <div class="form-group">
+          <label for="harga">Harga Barang (Rp):</label>
+          <input
+            type="number"
+            id="harga"
+            placeholder="Contoh: 100000"
+            value="100000"
+          />
         </div>
+
+        <div class="form-group">
+          <label for="diskon">Diskon (%):</label>
+          <input
+            type="number"
+            id="diskon"
+            placeholder="Contoh: 10"
+            value="10"
+          />
+        </div>
+
+        <button class="btn" onclick="hitungDiskon()">Hitung Diskon</button>
       </div>
 
-      <!-- Products Grid -->
-      <div class="products-section">
-        <h2>Produk (<span id="jumlahProduk">0</span>)</h2>
-        <div class="products-grid" id="produksGrid">
-          <!-- Produk akan ditampilkan di sini -->
+      <div class="result-card">
+        <h2>📊 Hasil Perhitungan</h2>
+        <div class="result-item">
+          <span>Harga Asli:</span>
+          <span id="hasilHargaAsli">Rp 0</span>
+        </div>
+        <div class="result-item">
+          <span>Potongan Harga:</span>
+          <span id="hasilPotongan">Rp 0</span>
+        </div>
+        <div class="result-item highlight">
+          <span>Harga Akhir:</span>
+          <span id="hasilHargaAkhir">Rp 0</span>
         </div>
       </div>
     </div>
